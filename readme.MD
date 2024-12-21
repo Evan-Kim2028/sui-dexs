@@ -26,9 +26,13 @@ This system tracks decentralized exchange (DEX) activities on Sui, including swa
 2. Event Processing Pipeline
 
     a. Pool Creation & Tracking
+
         - Each DEX has its own processor file (e.g., dex-tvl-cetus.ts)
+
         - Listens for pool creation events
+
         - Binds new pools to a template processor for ongoing monitoring:
+
         ```
         factory.bind({})
         .onEventCreatePoolEvent(async (event, ctx) => {
@@ -40,10 +44,14 @@ This system tracks decentralized exchange (DEX) activities on Sui, including swa
         ```
 
     b. TVL Tracking
+
         - Template processor runs at intervals (default 1440 blocks)
         - Fetches current pool state
+
         - Calculates TVL for each token in pool
+
         - Emits standardized TVL metrics:
+
         ```
         ctx.eventLogger.emit("tvl_gauge", {
             pool: poolInfo.pool,
@@ -54,12 +62,19 @@ This system tracks decentralized exchange (DEX) activities on Sui, including swa
         ```
 
     c. Swap Event Processing (dex.ts)
+
         1. Registers event handlers for all whitelisted DEX types
+
         2. Processes swap events through standardization functions:
+
             - `recordClmmV3SwapEvent` (for V3-style DEXes)
+
             - `recordAmmV2SwapEvent` (for V2-style DEXes)
+
             - `recordClobSwapEvent` (for orderbook-style DEXes)
+
             - `recordMultiAssetSwapEvent` (for multi-asset pools)
+            
 
 3. Helper Functions (`dex-helper.ts`)
 Key utilities for processing events:
