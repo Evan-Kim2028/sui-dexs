@@ -36,6 +36,7 @@ export const IPX_ADD_LIQUIDITY_TYPE = "0x5c45d10c26c5fb53bfaff819666da6bc7053d21
 export const IPX_REMOVE_LIQUIDITY_TYPE = "0x5c45d10c26c5fb53bfaff819666da6bc7053d2190dfa29fec311cc666ff1f4b0::core::RemoveLiquidity"
 //aftermath
 export const AFTERMATH_SWAP_TYPE = "0xefe170ec0be4d762196bedecd7a065816576198a6527c99282a2551aaa7da38c::events::SwapEvent"
+export const AFTERMATH_SWAP_TYPE_V2 = "0xefe170ec0be4d762196bedecd7a065816576198a6527c99282a2551aaa7da38c::events::SwapEventV2"
 export const AFTERMATH_POOL_TYPE = "0xefe170ec0be4d762196bedecd7a065816576198a6527c99282a2551aaa7da38c::pool::Pool"
 export const AFTERMATH_ADD_LIQUIDITY_TYPE = "0xefe170ec0be4d762196bedecd7a065816576198a6527c99282a2551aaa7da38c::events::DepositEvent"
 export const AFTERMATH_REMOVE_LIQUIDITY_TYPE = "0xefe170ec0be4d762196bedecd7a065816576198a6527c99282a2551aaa7da38c::events::WithdrawEvent"
@@ -60,7 +61,9 @@ export const WHITELISTED_TYPE_MAP = [
     IPX_SWAP_TYPE + "X",
     IPX_SWAP_TYPE + "Y",
     AFTERMATH_SWAP_TYPE,
+    AFTERMATH_SWAP_TYPE_V2,
     TURBOS_SWAP_TYPE,
+    
     //liquidity
     AFTERMATH_ADD_LIQUIDITY_TYPE,
     AFTERMATH_REMOVE_LIQUIDITY_TYPE,

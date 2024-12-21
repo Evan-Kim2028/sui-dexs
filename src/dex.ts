@@ -85,7 +85,8 @@ async function handleSwapEvents(events: SuiEvent[], ctx: SuiContext) {
         }
 
         //curve: aftermath
-        if (event.type.includes(constant.AFTERMATH_SWAP_TYPE)) {
+        if (event.type.includes(constant.AFTERMATH_SWAP_TYPE)
+            || event.type.includes(constant.AFTERMATH_SWAP_TYPE_V2)) {
             await recordMultiAssetSwapEvent(event, ctx)
         }
     }
